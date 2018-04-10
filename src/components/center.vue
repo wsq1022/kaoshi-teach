@@ -5,8 +5,12 @@
              <h1 class="mui-title">个人中心</h1>
          </header>
          <div class="mui-content">
-             <h1>{{ myTime }}</h1>
 
+             <ul class="mui-table-view">
+                 <li class="mui-table-view-cell">
+                     <router-link class="mui-navigate-right" to="/editPass">修改密码</router-link>
+                 </li>
+             </ul>
          </div>
      </div>
 </template>
@@ -22,11 +26,7 @@
                 }
             },
         data(){
-                return {
-                    myTime:""
-                }
-        },
-        mounted() {
+
         }
 
     }

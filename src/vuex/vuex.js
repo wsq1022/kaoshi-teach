@@ -13,8 +13,12 @@ const store = new Vuex.Store({
         enddatatime:"",
         tname:"",
         tid:"",
+        radioInfo:[],
+        checkInfo:[],
+        jiandaInfo:[]
     },
     mutations: {
+
         setFname(state,obj){
             state.fname=obj.fname;
             state.fid=obj.fid;
@@ -32,7 +36,17 @@ const store = new Vuex.Store({
         },
         setenddatatime(state,val){
             state.enddatatime=val;
+        },
+        setRadioInfo(state,val){
+            state.radioInfo=val;
+        },
+        setCheckInfo(state,val){
+            state.checkInfo=val;
+        },
+        setJiandaInfo(state,val){
+            state.jiandaInfo=val;
         }
+
     }
 })
 

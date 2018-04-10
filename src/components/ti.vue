@@ -51,6 +51,8 @@
 
 
              <button type="button" class="mui-btn mui-btn-primary" @click="go">开始组题</button>
+             <button type="button" class="mui-btn mui-btn-primary"  v-show="flag">预览</button>
+             <button type="button" class="mui-btn mui-btn-primary"  v-show="flag" @click="savedatabase">存入数据库</button>
          </div>
      </div>
 </template>
@@ -65,6 +67,10 @@
                start:"",
                end:""
             }
+        },
+
+        created(){
+            console.log(this.radioInfo)
         },
 
         methods:{
@@ -105,6 +111,29 @@
                     this.end+=" "+(formatTime);
                     this.$store.commit("setenddatatime",this.end)
                 })
+            },
+            savedatabase(){
+                var radiostr=this.radioInfo.join("|");
+                var checkstr=this.checkInfo.join("|");
+                var jiandastr=this.jiandaInfo.join("|");
+
+                var con=radiostr+"|"+checkstr+"|"+jiandastr;
+                var teachid=JSON.parse(sessionStorage.teachLogin).id;
+                var fid=this.$store.state.fid;
+                var cid=this.$store.state.cid;
+                var start=this.$store.state.startdatatime
+                var end=this.$store.state.enddatatime
+
+                var params="con="+con+"&teachid="+teachid+"&fid="+fid+"&cid="+cid+"&start="+start+"&end="+end;
+
+                fetch("/api/teachzuti/add?"+params).then(function (e) {
+                    return e.text();
+                }).then((e)=>{
+                    if(e=="ok"){
+                        alert("ok");
+                    }
+                })
+
             }
 
 
@@ -124,6 +153,19 @@
             },
             tname(){
                 return this.$store.state.tname==""?"":"("+this.$store.state.tname+")";
+            },
+
+            radioInfo(){
+                return this.$store.state.radioInfo
+            },
+            checkInfo(){
+                return this.$store.state.checkInfo
+            },
+            jiandaInfo(){
+                return this.$store.state.jiandaInfo
+            },
+            flag() {
+                return (this.radioInfo.length || this.checkInfo.length || this.jiandaInfo.length) ? true : false
             }
         }
     }

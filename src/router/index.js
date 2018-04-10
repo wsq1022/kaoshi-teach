@@ -8,6 +8,7 @@ import selectFangxiang from '@/components/selectFangxiang'
 import selectBanji from '@/components/selectBanji'
 import selectType from '@/components/selectType'
 import zuti from '@/components/zuti'
+import editPass from '@/components/editPass'
 
 Vue.use(Router)
 
@@ -44,6 +45,10 @@ var router= new Router({
       {
           path:"/zuti",
           component:zuti
+      },
+      {
+          path:"/editPass",
+          component:editPass
       }
   ]
 })
