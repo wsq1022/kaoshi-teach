@@ -6,6 +6,8 @@ import center from '@/components/center'
 import ti from '@/components/ti'
 import selectFangxiang from '@/components/selectFangxiang'
 import selectBanji from '@/components/selectBanji'
+import selectType from '@/components/selectType'
+import zuti from '@/components/zuti'
 
 Vue.use(Router)
 
@@ -34,6 +36,14 @@ var router= new Router({
       {
           path:"/selectBanji",
           component:selectBanji
+      },
+      {
+          path:"/selectType",
+          component:selectType
+      },
+      {
+          path:"/zuti",
+          component:zuti
       }
   ]
 })

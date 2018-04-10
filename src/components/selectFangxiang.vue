@@ -25,7 +25,7 @@
                     item.color="#000";
                 })
                 item.color="blue";
-                this.$store.commit("setFname",item.fname,item.fid)
+                this.$store.commit("setFname",{fname:item.fname,fid:item.fid})
             }
         },
         data(){

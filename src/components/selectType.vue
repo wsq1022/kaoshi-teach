@@ -2,12 +2,12 @@
     <div>
     <header class="mui-bar mui-bar-nav">
         <a class="mui-icon  mui-icon-closeempty mui-pull-left" @click.prevent="back($event)"></a>
-        <h1 class="mui-title">选择班级</h1>
+        <h1 class="mui-title">选择类型</h1>
     </header>
     <div class="mui-content">
 
         <ul class="mui-table-view">
-            <li class="mui-table-view-cell" v-for="item in datas" @click="select(item)" :style="{color:item.color}">{{item.name}}</li>
+            <li class="mui-table-view-cell" v-for="item in datas" @click="select(item)" :style="{color:item.color}">{{item.typename}}</li>
         </ul>
     </div>
     </div>
@@ -25,7 +25,7 @@
                     item.color="#000";
                 })
                 item.color="blue";
-                this.$store.commit("setCname",{cname:item.name,cid:item.id})
+                this.$store.commit("setTname",{tname:item.typename,tid:item.typeid})
             }
         },
         data(){
@@ -35,7 +35,7 @@
             }
         },
         mounted(){
-            fetch("/api/classes/select").then(function (e) {
+            fetch("/api/type/select").then(function (e) {
                 return e.json();
             }).then((e)=>{
                 e.forEach(function (item,index) {

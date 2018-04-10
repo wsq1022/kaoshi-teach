@@ -8,16 +8,30 @@ const store = new Vuex.Store({
         fname: "",
         fid:"",
         cname:"",
-        cid:""
+        cid:"",
+        startdatatime:"",
+        enddatatime:"",
+        tname:"",
+        tid:"",
     },
     mutations: {
-        setFname(state,fname,fid){
-            state.fname=fname;
-            state.fid=fid;
+        setFname(state,obj){
+            state.fname=obj.fname;
+            state.fid=obj.fid;
         },
-        setCname(state,cname,cid){
-            state.cname=cname;
-            state.cid=cid;
+        setCname(state,obj){
+            state.cname=obj.cname;
+            state.cid=obj.cid;
+        },
+        setTname(state,obj){
+            state.tname=obj.tname;
+            state.tid=obj.tid;
+        },
+        setstartdatatime(state,val){
+            state.startdatatime=val;
+        },
+        setenddatatime(state,val){
+            state.enddatatime=val;
         }
     }
 })
