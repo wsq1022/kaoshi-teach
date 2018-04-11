@@ -9,6 +9,7 @@ import selectBanji from '@/components/selectBanji'
 import selectType from '@/components/selectType'
 import zuti from '@/components/zuti'
 import editPass from '@/components/editPass'
+import preview from '@/components/preview'
 
 Vue.use(Router)
 
@@ -49,6 +50,10 @@ var router= new Router({
       {
           path:"/editPass",
           component:editPass
+      },
+      {
+          path:"/preview",
+          component:preview
       }
   ]
 })

@@ -51,7 +51,7 @@
 
 
              <button type="button" class="mui-btn mui-btn-primary" @click="go">开始组题</button>
-             <button type="button" class="mui-btn mui-btn-primary"  v-show="flag">预览</button>
+             <button type="button" class="mui-btn mui-btn-primary"  v-show="flag" @click="preview">预览</button>
              <button type="button" class="mui-btn mui-btn-primary"  v-show="flag" @click="savedatabase">存入数据库</button>
          </div>
      </div>
@@ -74,6 +74,9 @@
         },
 
         methods:{
+            preview(){
+                this.$router.push("/preview")
+            },
             go(){
                 this.$router.push("/zuti")
 

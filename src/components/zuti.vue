@@ -121,7 +121,19 @@
         mounted(){
             var fid=this.$store.state.fid;
             var tid=this.$store.state.tid;
-            var params="fid="+fid+"&tid="+tid
+            var params="fid="+fid+"&tid="+tid;
+
+            var livedata="";
+
+            if(this.type==1){
+                livedata=this.$store.state.radioInfo;
+            }else if(this.type==2){
+                livedata=this.$store.state.checkInfo;
+
+            }else{
+                livedata=this.$store.state.jiandaInfo;
+            }
+
 
             fetch("/api/teachtest/select?"+params).then(function (e) {
                 return e.json();
@@ -130,6 +142,12 @@
                 e.forEach(function (item) {
                     item.options=item.options.split("|");
                     item.info=""
+                    livedata.forEach(function (item1) {
+                        var arr=item1.split(":");
+                        if(item.id==arr[0]){
+                            item.info=arr[0]+":"+arr[1];
+                        }
+                    })
                 })
 
                 this.datas=e;

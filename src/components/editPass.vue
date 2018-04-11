@@ -41,7 +41,7 @@
                     return;
                 }
 
-                var params="pass1="+this.pass1+"&pass2="+this.pass2+"&id="+JSON.parse(sessionStorage.teachLogin).id;
+                var params="pass1="+this.pass1+"&pass2="+this.pass2;
 
                 fetch("/api/ctl/editpass?"+params).then(function (e) {
                     return e.text();
