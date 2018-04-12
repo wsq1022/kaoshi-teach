@@ -10,6 +10,12 @@ import selectType from '@/components/selectType'
 import zuti from '@/components/zuti'
 import editPass from '@/components/editPass'
 import preview from '@/components/preview'
+import tied from '@/components/tied'
+import tiedStu from '@/components/tiedStu'
+import tiedInfo from '@/components/tiedInfo'
+
+
+
 
 Vue.use(Router)
 
@@ -54,7 +60,20 @@ var router= new Router({
       {
           path:"/preview",
           component:preview
+      },
+      {
+          path:"/tied",
+          component:tied
+      },
+      {
+          path:"/tiedStu",
+          component:tiedStu
+      },
+      {
+          path:"/tiedInfo",
+          component:tiedInfo
       }
+
   ]
 })
 

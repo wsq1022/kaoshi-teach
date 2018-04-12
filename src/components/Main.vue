@@ -21,10 +21,10 @@
                      <span class="mui-icon mui-icon mui-icon-compose"></span>
                      <div class="info">我要出题</div>
                </router-link>
-               <li class="opt">
+               <router-link to="/tied" tag="li" class="opt">
                    <span class="mui-icon mui-icon mui-icon-compose"></span>
-                   <div class="info">我要出题</div>
-               </li>
+                   <div class="info">已出题</div>
+               </router-link>
                <li class="opt">
                    <span class="mui-icon mui-icon mui-icon-compose"></span>
                    <div class="info">我要出题</div>
